@@ -1,6 +1,5 @@
 const path = require('path');
 const outputPath = path.resolve(__dirname,'dist');
-console.log({outputPath});
 module.exports = {
   entry: { 
     main: './src/index.js',
@@ -8,8 +7,16 @@ module.exports = {
   output: {
     filename: '[name].js',
     path: outputPath
-  }
-  ,devServer: {
+  },
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: ['style-loader','css-loader']
+      }
+    ]
+  },
+  devServer: {
     contentBase: outputPath
   }
 }
