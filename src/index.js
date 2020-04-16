@@ -1,5 +1,6 @@
 import _ from "lodash";
-import './style.css';
+// import './style.css';
+import '../sass/index.scss';
 import man from './images/b-mv__man.jpg';
 
 function component(){
